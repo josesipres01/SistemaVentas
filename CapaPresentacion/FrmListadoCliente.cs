@@ -49,7 +49,6 @@ namespace CapaPresentacion
         private void btneditar_Click(object sender, EventArgs e)
         {
             FrmRegistrarCliente form = new FrmRegistrarCliente();
-
             form.Edit = true;
 
             form.txtidcliente.Text = this.dlistado.CurrentRow.Cells["idcliente"].Value.ToString();
@@ -69,6 +68,8 @@ namespace CapaPresentacion
             {
                 form.rbtninactivo.Checked = true;
             }
+            form.ShowDialog();
+            this.Mostrar();
 
 
         }
@@ -77,7 +78,7 @@ namespace CapaPresentacion
         {
             FrmRegistrarCliente form = new FrmRegistrarCliente();
 
-            form.Insert = true; 
+            form.Insert = true;             
 
             form.Show();
             this.Hide();

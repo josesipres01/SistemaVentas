@@ -184,6 +184,7 @@
             this.btnguardar.TabIndex = 15;
             this.btnguardar.Text = "&Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btncancerlar
             // 
@@ -193,6 +194,7 @@
             this.btncancerlar.TabIndex = 16;
             this.btncancerlar.Text = "&Cancelar";
             this.btncancerlar.UseVisualStyleBackColor = true;
+            this.btncancerlar.Click += new System.EventHandler(this.btncancerlar_Click);
             // 
             // FrmRegistrarCliente
             // 

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Data;
 using System.Data.SqlClient;
@@ -28,7 +24,7 @@ namespace CapaDatos
             try
             {
                 conexion.ConnectionString = Conexión.Conn;
-                SqlCommand Cmd = new SqlCommand("splistar_clientes", conexion);
+                SqlCommand Cmd = new SqlCommand("splistar_cliente", conexion);
                 Cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
