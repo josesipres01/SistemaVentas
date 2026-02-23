@@ -82,6 +82,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(740, 130);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -128,6 +129,7 @@
             this.label1.Size = new System.Drawing.Size(88, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Categoria";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dlistado
             // 
@@ -138,6 +140,7 @@
             this.dlistado.RowTemplate.Height = 24;
             this.dlistado.Size = new System.Drawing.Size(740, 167);
             this.dlistado.TabIndex = 12;
+            this.dlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dlistado_CellContentClick);
             // 
             // FrmListadoCategoria
             // 
