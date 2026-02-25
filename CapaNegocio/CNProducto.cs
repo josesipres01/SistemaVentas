@@ -35,25 +35,43 @@ namespace CapaNegocio
             return Datos.Guardar(Datos);
         }
 
-        public static string Editar(int idproducto, string descripcion)
+        public static string Editar(int idproducto, string codigo, string nombre, string descripcion,
+                                     DateTime fingreso, DateTime fvencimiento, double pcompra,
+                                     double pventa, int stock, string Estado, int idcategoria)
         {
-            CDCategoria Datos = new CDCategoria();
-            Datos.IdCategoria = idproducto;
+            CDProducto Datos = new CDProducto();
+            Datos.Idproducto = idproducto;
+            Datos.Codigo = codigo;
+            Datos.Nombre = nombre;
             Datos.Descripcion = descripcion;
+            Datos.Fingreso = fingreso;
+            Datos.Fvencimiento = fvencimiento;
+            Datos.Pcompra= pcompra;
+            Datos.Stock = stock;
+            Datos.Estado = Estado;
+            Datos.Idcategoria = idcategoria;    
+
             return Datos.Editar(Datos);
 
         }
 
-        public static string Eliminar(int idcategoria)
+        public static string Eliminar(int idproducto)
         {
-            CDCategoria Datos = new CDCategoria();
-            Datos.IdCategoria = idcategoria;
+            CDProducto Datos = new CDProducto();
+            Datos.Idproducto = idproducto;
             return Datos.Eliminar(Datos);
         }
 
         public static DataTable BuscarNombre(string textoBuscar)
         {
-            CDCategoria Datos = new CDCategoria();
+            CDProducto Datos = new CDProducto();
+            Datos.Buscar = textoBuscar;
+            return Datos.BuscarNombre(Datos);
+        }
+
+        public static DataTable BuscarCodigo(string textoBuscar)
+        {
+            CDProducto Datos = new CDProducto();
             Datos.Buscar = textoBuscar;
             return Datos.BuscarNombre(Datos);
         }
