@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CDProducto
+    public class    CDProducto
     {
         public int Idproducto { get; set; }
         public string Codigo { get; set; }

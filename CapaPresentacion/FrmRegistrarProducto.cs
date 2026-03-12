@@ -13,6 +13,9 @@ namespace CapaPresentacion
 {
     public partial class FrmRegistrarProducto : Form
     {
+
+        public bool Insert = false;
+        public bool Edit = false;
         public FrmRegistrarProducto()
         {
             InitializeComponent();
@@ -23,74 +26,90 @@ namespace CapaPresentacion
 
         private void FrmRegistrarProducto_Load(object sender, EventArgs e)
         {
+            this.Top = 0;
+            this.Left = 0;
+                
             LlenarComboCategorias();
+
 
         }
 
         private void LlenarComboCategorias()
         {
-            cbcategoria.DataSource = CNCategoria.Listar();
-            cbcategoria.DisplayMember = "descripcion";
-            cbcategoria.ValueMember = "idcategoria";
+            cbidcategoria.DataSource = CNCategoria.Listar();
+            cbidcategoria.DisplayMember = "descripcion";
+            cbidcategoria.ValueMember = "idcategoria";
         }
 
-        private void btnguardar_Click_1(object sender, EventArgs e)
+ private void btnguardar_Click_1(object sender, EventArgs e)
+{
+    try
+    {
+        if (string.IsNullOrWhiteSpace(txtcodigo.Text) || string.IsNullOrWhiteSpace(txtnombre.Text) ||
+            string.IsNullOrWhiteSpace(txtpreciocompra.Text) || string.IsNullOrWhiteSpace(txtprecioventa.Text) ||
+            string.IsNullOrWhiteSpace(txtcantidad.Text))
         {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(txtcodigo.Text) ||
-                    string.IsNullOrWhiteSpace(txtnombre.Text) ||
-                    string.IsNullOrWhiteSpace(txtpreciocompra.Text) ||
-                    string.IsNullOrWhiteSpace(txtprecioventa.Text) ||
-                    string.IsNullOrWhiteSpace(txtstock.Text))
-                {
-                    MessageBox.Show("Por favor, complete todos los campos obligatorios (Código, Nombre, Precios y Stock).",
-                                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Detiene el proceso si falta algo
-                }
-
-                // --- PREPARACIÓN DE DATOS ---
-                string rpta = "";
-
-                string estado = rbtnactivo.Checked ? "Activo" : "Inactivo";
-
-                // --- LLAMADA A LA CAPA DE NEGOCIO (CNProducto) ---
-                rpta = CNProducto.Guardar(
-                    txtcodigo.Text.Trim(),
-                    txtnombre.Text.Trim(),
-                    txtdescripcion.Text.Trim(),
-                    dtimeingreso.Value,          
-                    dtimevencimiento.Value,       
-                    Convert.ToDouble(txtpreciocompra.Text),
-                    Convert.ToDouble(txtprecioventa.Text),
-                    Convert.ToInt32(txtstock.Text),
-                    estado,
-                    Convert.ToInt32(cbcategoria.SelectedValue) // El ID de la categoría del ComboBox
-                );
-
-                if (rpta.Equals("OK"))
-                {
-                    MessageBox.Show("¡Producto guardado exitosamente!", "Sistema de Ventas",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.LimpiarControles();
-                }
-                else
-                {
-                    MessageBox.Show("Error al guardar: " + rpta, "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Asegúrese de que los precios y el stock tengan solamente numeros.",
-                                "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error inesperado: " + ex.Message,
-                                "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Por favor, complete todos los campos obligatorios (Código, Precio Compra y Cantidad).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
         }
+
+        string rpta = "";
+        string estado = rbactivo.Checked ? "Activo" : "Inactivo";
+
+        if (this.Edit)
+        {
+            rpta = CNProducto.Editar(
+                Convert.ToInt32(txtidproducto.Text),
+                txtcodigo.Text.Trim(),
+                txtnombre.Text.Trim(),
+                txtdescripcion.Text.Trim(),
+                dtfechaingreso.Value,
+                dtfechavencimiento.Value,
+                Convert.ToDouble(txtpreciocompra.Text),
+                Convert.ToDouble(txtprecioventa.Text),
+                Convert.ToInt32(txtcantidad.Text),
+                estado,
+                Convert.ToInt32(cbidcategoria.SelectedValue));
+        }
+        else
+        {
+            rpta = CNProducto.Guardar(
+                txtcodigo.Text.Trim(),
+                txtnombre.Text.Trim(),
+                txtdescripcion.Text.Trim(),
+                dtfechaingreso.Value,
+                dtfechavencimiento.Value,
+                Convert.ToDouble(txtpreciocompra.Text),
+                Convert.ToDouble(txtprecioventa.Text),
+                Convert.ToInt32(txtcantidad.Text),
+                estado,
+                Convert.ToInt32(cbidcategoria.SelectedValue));
+        }
+
+        if (rpta.Equals("OK"))
+        {
+            string mensaje = this.Edit ? "¡Producto editado exitosamente!" : "¡Producto guardado exitosamente!";
+            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            this.Edit = false;
+            FrmListadoProducto form = new FrmListadoProducto();
+            form.Show();
+           this.Hide();
+         }
+        else
+        {
+            MessageBox.Show("Error: " + rpta, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+    catch (FormatException)
+    {
+        MessageBox.Show("Asegúrese de que los precios y el stock tengan solamente números.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Ocurrió un error: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
 
         private void LimpiarControles()
         {
@@ -99,15 +118,17 @@ namespace CapaPresentacion
             txtdescripcion.Clear();
             txtpreciocompra.Clear();
             txtprecioventa.Clear();
-            txtstock.Clear();
-            rbtnactivo.Checked = true;
-            cbcategoria.SelectedIndex = 0;
-            dtimeingreso.Value = DateTime.Now;
-            dtimevencimiento.Value = DateTime.Now;
+            txtcantidad.Clear();
+            rbactivo.Checked = true;
+            cbidcategoria.SelectedIndex = 0;
+            dtfechaingreso.Value = DateTime.Now;
+            dtfechavencimiento.Value = DateTime.Now;
         }
         private void btncancerlar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmListadoProducto form = new FrmListadoProducto();
+            form.Show();
+            this.Hide();
         }
 
         private void validaciónPrecio(object sender, KeyPressEventArgs e)
@@ -123,6 +144,10 @@ namespace CapaPresentacion
             }
         }
 
+        private void dtfechavencimiento_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
