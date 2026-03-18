@@ -66,6 +66,12 @@
     <Compile Include="FrmListadoProducto.Designer.cs">
       <DependentUpon>FrmListadoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListadoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoProveedor.Designer.cs">
+      <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="FrmRegistrarProducto.Designer.cs">
       <DependentUpon>FrmRegistrarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarProveedor.Designer.cs">
+      <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +114,9 @@
     <EmbeddedResource Include="FrmListadoProducto.resx">
       <DependentUpon>FrmListadoProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoProveedor.resx">
+      <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarCategoria.resx">
       <DependentUpon>FrmRegistrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarProducto.resx">
       <DependentUpon>FrmRegistrarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarProveedor.resx">
+      <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
