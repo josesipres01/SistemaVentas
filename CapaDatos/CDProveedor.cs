@@ -11,7 +11,7 @@ namespace CapaDatos
         public class CDProveedor
         {
                 public int Idproveedor { get; set; }
-                public string nombre { get; set; }
+                public string razonsocial { get; set; }
                 public string Dni { get; set; }
                 public string Rfc { get; set; }
                 public string Telefono { get; set; }
@@ -86,7 +86,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@idproveedor", prov.Idproveedor);
-                    cmd.Parameters.AddWithValue("@nombre", prov.nombre);
+                    cmd.Parameters.AddWithValue("@razonsocial", prov.razonsocial);
                     cmd.Parameters.AddWithValue("@dni", prov.Dni);
                     cmd.Parameters.AddWithValue("@rfc", prov.Rfc);
                     cmd.Parameters.AddWithValue("@telefono", prov.Telefono);

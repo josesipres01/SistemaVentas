@@ -33,7 +33,7 @@ namespace CapaNegocio
         {
             CDProveedor objeto = new CDProveedor();
             objeto.Idproveedor = idproveedor;
-            objeto.nombre = razonsocial;
+            objeto.razonsocial = razonsocial;
             objeto.Dni = dni;
             objeto.Rfc = rfc;
             objeto.Telefono = telefono;

@@ -119,7 +119,7 @@ namespace CapaPresentacion
                     {
                         string idproveedor = dlistado.CurrentRow.Cells["idproveedor"].Value.ToString();
                         CNProveedor.Eliminar(Convert.ToInt32(idproveedor.ToString()));
-                        MessageBox.Show("Rigistro eliminado",
+                        MessageBox.Show("Registro eliminado",
                             "Sistema de ventas",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
