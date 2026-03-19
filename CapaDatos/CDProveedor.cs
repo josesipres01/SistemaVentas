@@ -10,14 +10,14 @@ namespace CapaDatos
     {
         public class CDProveedor
         {
-            public int Idproveedor { get; set; }
-            public string Razonsocial { get; set; }
-            public string Dni { get; set; }
-            public string Rfc { get; set; }
-            public string Telefono { get; set; }
-            public string Direccion { get; set; }
-            public string Estado { get; set; }
-            public string Buscar { get; set; }
+                public int Idproveedor { get; set; }
+                public string nombre { get; set; }
+                public string Dni { get; set; }
+                public string Rfc { get; set; }
+                public string Telefono { get; set; }
+                public string Direccion { get; set; }
+                public string Estado { get; set; }
+                public string Buscar { get; set; }
 
             public DataTable Listar()
             {
@@ -54,7 +54,7 @@ namespace CapaDatos
 
                     cmd.Parameters.AddWithValue("@idproveedor", SqlDbType.Int).Direction =
                         ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("@razonsocial", prov.Razonsocial);
+                    cmd.Parameters.AddWithValue("@razonsocial", prov.nombre);
                     cmd.Parameters.AddWithValue("@dni", prov.Dni);
                     cmd.Parameters.AddWithValue("@rfc", prov.Rfc);
                     cmd.Parameters.AddWithValue("@telefono", prov.Telefono);
@@ -86,7 +86,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@idproveedor", prov.Idproveedor);
-                    cmd.Parameters.AddWithValue("@razonsocial", prov.Razonsocial);
+                    cmd.Parameters.AddWithValue("@nombre", prov.nombre);
                     cmd.Parameters.AddWithValue("@dni", prov.Dni);
                     cmd.Parameters.AddWithValue("@rfc", prov.Rfc);
                     cmd.Parameters.AddWithValue("@telefono", prov.Telefono);
