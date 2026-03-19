@@ -18,7 +18,7 @@ namespace CapaNegocio
         public static string Guardar(string razonsocial, string dni, string rfc, string telefono, string direccion, string estado)
         {
             CDProveedor objeto = new CDProveedor();
-            objeto.nombre = razonsocial;
+            objeto.razonsocial = razonsocial;
             objeto.Dni = dni;
             objeto.Rfc = rfc;
             objeto.Telefono = telefono;

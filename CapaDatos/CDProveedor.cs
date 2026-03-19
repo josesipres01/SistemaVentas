@@ -54,7 +54,7 @@ namespace CapaDatos
 
                     cmd.Parameters.AddWithValue("@idproveedor", SqlDbType.Int).Direction =
                         ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("@razonsocial", prov.nombre);
+                    cmd.Parameters.AddWithValue("@razonsocial", prov.razonsocial);
                     cmd.Parameters.AddWithValue("@dni", prov.Dni);
                     cmd.Parameters.AddWithValue("@rfc", prov.Rfc);
                     cmd.Parameters.AddWithValue("@telefono", prov.Telefono);
