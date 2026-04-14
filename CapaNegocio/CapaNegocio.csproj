@@ -47,6 +47,7 @@
     <Compile Include="CNEmpleado.cs" />
     <Compile Include="CNProducto.cs" />
     <Compile Include="CNProveedor.cs" />
+    <Compile Include="CNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

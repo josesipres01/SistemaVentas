@@ -46,6 +46,7 @@
     <Compile Include="CDEmpleado.cs" />
     <Compile Include="CDProducto.cs" />
     <Compile Include="CDProveedor.cs" />
+    <Compile Include="CDUsuario.cs" />
     <Compile Include="Conexión.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
