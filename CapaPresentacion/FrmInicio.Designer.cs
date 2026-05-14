@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
@@ -49,23 +52,31 @@
             this.btnventas = new System.Windows.Forms.Button();
             this.btnclientes = new System.Windows.Forms.Button();
             this.btngenerarventa = new System.Windows.Forms.Button();
-            this.mnuconsultas = new System.Windows.Forms.Panel();
-            this.btnconsultas = new System.Windows.Forms.Button();
-            this.btnstockminimo = new System.Windows.Forms.Button();
-            this.btncomprafechas = new System.Windows.Forms.Button();
-            this.btnventafechas = new System.Windows.Forms.Button();
             this.mnuconfiguraciones = new System.Windows.Forms.Panel();
             this.btnconfiguraciones = new System.Windows.Forms.Button();
             this.btnusuarios = new System.Windows.Forms.Button();
             this.btnempleados = new System.Windows.Forms.Button();
             this.mnureportes = new System.Windows.Forms.Panel();
             this.btnreportes = new System.Windows.Forms.Button();
-            this.btnreporteempleado = new System.Windows.Forms.Button();
+            this.btnreportecategorias = new System.Windows.Forms.Button();
             this.btnreportecliente = new System.Windows.Forms.Button();
             this.btnreporteproducto = new System.Windows.Forms.Button();
+            this.mnuconsultas = new System.Windows.Forms.Panel();
+            this.btnconsultas = new System.Windows.Forms.Button();
+            this.btnstockminimo = new System.Windows.Forms.Button();
+            this.btncomprafechas = new System.Windows.Forms.Button();
+            this.btnventafechas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tmrsubmenu = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
@@ -75,14 +86,18 @@
             this.mnualmacen.SuspendLayout();
             this.mnucompra.SuspendLayout();
             this.mnuventa.SuspendLayout();
-            this.mnuconsultas.SuspendLayout();
             this.mnuconfiguraciones.SuspendLayout();
             this.mnureportes.SuspendLayout();
+            this.mnuconsultas.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.lblApellido);
+            this.panel1.Controls.Add(this.lblNombre);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnminimizar);
             this.panel1.Controls.Add(this.btnmaximizar);
             this.panel1.Controls.Add(this.btnrestaurar);
@@ -90,14 +105,46 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(1402, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.White;
+            this.lblApellido.Location = new System.Drawing.Point(1269, 81);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(50, 16);
+            this.lblApellido.TabIndex = 6;
+            this.lblApellido.Text = "label1";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(1229, 80);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(50, 16);
+            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Text = "label1";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.users;
+            this.pictureBox2.Location = new System.Drawing.Point(1198, 73);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // btnminimizar
             // 
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnminimizar.Image")));
-            this.btnminimizar.Location = new System.Drawing.Point(670, 21);
+            this.btnminimizar.Location = new System.Drawing.Point(1272, 21);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(25, 25);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,7 +156,7 @@
             // 
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
-            this.btnmaximizar.Location = new System.Drawing.Point(705, 21);
+            this.btnmaximizar.Location = new System.Drawing.Point(1307, 21);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(25, 25);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -121,7 +168,7 @@
             // 
             this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnrestaurar.Image")));
-            this.btnrestaurar.Location = new System.Drawing.Point(705, 21);
+            this.btnrestaurar.Location = new System.Drawing.Point(1307, 21);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(25, 25);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,7 +180,7 @@
             // 
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(740, 21);
+            this.btncerrar.Location = new System.Drawing.Point(1342, 21);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(25, 25);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -154,7 +201,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 100);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(222, 514);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(222, 698);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -191,6 +238,7 @@
             this.btncategoria.TabIndex = 2;
             this.btncategoria.Text = "Categoría";
             this.btncategoria.UseVisualStyleBackColor = false;
+            this.btncategoria.Click += new System.EventHandler(this.btncategoria_Click);
             // 
             // btnproducto
             // 
@@ -205,6 +253,7 @@
             this.btnproducto.TabIndex = 1;
             this.btnproducto.Text = "Producto";
             this.btnproducto.UseVisualStyleBackColor = false;
+            this.btnproducto.Click += new System.EventHandler(this.btnproducto_Click);
             // 
             // btnalmacen
             // 
@@ -248,6 +297,7 @@
             this.btnproveedor.TabIndex = 2;
             this.btnproveedor.Text = "Proveedores";
             this.btnproveedor.UseVisualStyleBackColor = false;
+            this.btnproveedor.Click += new System.EventHandler(this.btnproveedor_Click);
             // 
             // btngenerarcompra
             // 
@@ -322,6 +372,7 @@
             this.btnclientes.TabIndex = 2;
             this.btnclientes.Text = "Clientes";
             this.btnclientes.UseVisualStyleBackColor = false;
+            this.btnclientes.Click += new System.EventHandler(this.btnclientes_Click);
             // 
             // btngenerarventa
             // 
@@ -336,6 +387,140 @@
             this.btngenerarventa.TabIndex = 1;
             this.btngenerarventa.Text = "Generar Venta";
             this.btngenerarventa.UseVisualStyleBackColor = false;
+            this.btngenerarventa.Click += new System.EventHandler(this.btngenerarventa_Click);
+            // 
+            // mnuconfiguraciones
+            // 
+            this.mnuconfiguraciones.Controls.Add(this.btnconfiguraciones);
+            this.mnuconfiguraciones.Controls.Add(this.btnusuarios);
+            this.mnuconfiguraciones.Controls.Add(this.btnempleados);
+            this.mnuconfiguraciones.Location = new System.Drawing.Point(3, 262);
+            this.mnuconfiguraciones.MaximumSize = new System.Drawing.Size(214, 120);
+            this.mnuconfiguraciones.MinimumSize = new System.Drawing.Size(214, 37);
+            this.mnuconfiguraciones.Name = "mnuconfiguraciones";
+            this.mnuconfiguraciones.Size = new System.Drawing.Size(214, 46);
+            this.mnuconfiguraciones.TabIndex = 8;
+            // 
+            // btnconfiguraciones
+            // 
+            this.btnconfiguraciones.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnconfiguraciones.FlatAppearance.BorderSize = 0;
+            this.btnconfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconfiguraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconfiguraciones.ForeColor = System.Drawing.Color.White;
+            this.btnconfiguraciones.Image = global::CapaPresentacion.Properties.Resources.confi_1;
+            this.btnconfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnconfiguraciones.Location = new System.Drawing.Point(3, 3);
+            this.btnconfiguraciones.Name = "btnconfiguraciones";
+            this.btnconfiguraciones.Size = new System.Drawing.Size(208, 40);
+            this.btnconfiguraciones.TabIndex = 0;
+            this.btnconfiguraciones.Text = "Configuraciones";
+            this.btnconfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnconfiguraciones.UseVisualStyleBackColor = false;
+            this.btnconfiguraciones.Click += new System.EventHandler(this.btnconfiguraciones_Click);
+            // 
+            // btnusuarios
+            // 
+            this.btnusuarios.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnusuarios.FlatAppearance.BorderSize = 0;
+            this.btnusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnusuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnusuarios.ForeColor = System.Drawing.Color.White;
+            this.btnusuarios.Location = new System.Drawing.Point(75, 84);
+            this.btnusuarios.Name = "btnusuarios";
+            this.btnusuarios.Size = new System.Drawing.Size(136, 30);
+            this.btnusuarios.TabIndex = 2;
+            this.btnusuarios.Text = "Usuarios";
+            this.btnusuarios.UseVisualStyleBackColor = false;
+            this.btnusuarios.Click += new System.EventHandler(this.btnusuarios_Click);
+            // 
+            // btnempleados
+            // 
+            this.btnempleados.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnempleados.FlatAppearance.BorderSize = 0;
+            this.btnempleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnempleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnempleados.ForeColor = System.Drawing.Color.White;
+            this.btnempleados.Location = new System.Drawing.Point(75, 49);
+            this.btnempleados.Name = "btnempleados";
+            this.btnempleados.Size = new System.Drawing.Size(136, 30);
+            this.btnempleados.TabIndex = 1;
+            this.btnempleados.Text = "Empleados";
+            this.btnempleados.UseVisualStyleBackColor = false;
+            this.btnempleados.Click += new System.EventHandler(this.btnempleados_Click);
+            // 
+            // mnureportes
+            // 
+            this.mnureportes.Controls.Add(this.btnreportes);
+            this.mnureportes.Controls.Add(this.btnreportecategorias);
+            this.mnureportes.Controls.Add(this.btnreportecliente);
+            this.mnureportes.Controls.Add(this.btnreporteproducto);
+            this.mnureportes.Location = new System.Drawing.Point(3, 314);
+            this.mnureportes.MaximumSize = new System.Drawing.Size(214, 160);
+            this.mnureportes.MinimumSize = new System.Drawing.Size(214, 37);
+            this.mnureportes.Name = "mnureportes";
+            this.mnureportes.Size = new System.Drawing.Size(214, 46);
+            this.mnureportes.TabIndex = 9;
+            // 
+            // btnreportes
+            // 
+            this.btnreportes.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreportes.FlatAppearance.BorderSize = 0;
+            this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportes.ForeColor = System.Drawing.Color.White;
+            this.btnreportes.Image = global::CapaPresentacion.Properties.Resources.reportes1;
+            this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnreportes.Location = new System.Drawing.Point(3, 3);
+            this.btnreportes.Name = "btnreportes";
+            this.btnreportes.Size = new System.Drawing.Size(208, 40);
+            this.btnreportes.TabIndex = 0;
+            this.btnreportes.Text = "Reportes";
+            this.btnreportes.UseVisualStyleBackColor = false;
+            this.btnreportes.Click += new System.EventHandler(this.btnreportes_Click);
+            // 
+            // btnreportecategorias
+            // 
+            this.btnreportecategorias.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreportecategorias.FlatAppearance.BorderSize = 0;
+            this.btnreportecategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportecategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportecategorias.ForeColor = System.Drawing.Color.White;
+            this.btnreportecategorias.Location = new System.Drawing.Point(75, 120);
+            this.btnreportecategorias.Name = "btnreportecategorias";
+            this.btnreportecategorias.Size = new System.Drawing.Size(136, 30);
+            this.btnreportecategorias.TabIndex = 3;
+            this.btnreportecategorias.Text = "Categorías";
+            this.btnreportecategorias.UseVisualStyleBackColor = false;
+            this.btnreportecategorias.Click += new System.EventHandler(this.btnreportecategorias_Click);
+            // 
+            // btnreportecliente
+            // 
+            this.btnreportecliente.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreportecliente.FlatAppearance.BorderSize = 0;
+            this.btnreportecliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportecliente.ForeColor = System.Drawing.Color.White;
+            this.btnreportecliente.Location = new System.Drawing.Point(75, 84);
+            this.btnreportecliente.Name = "btnreportecliente";
+            this.btnreportecliente.Size = new System.Drawing.Size(136, 30);
+            this.btnreportecliente.TabIndex = 2;
+            this.btnreportecliente.Text = "Clientes";
+            this.btnreportecliente.UseVisualStyleBackColor = false;
+            // 
+            // btnreporteproducto
+            // 
+            this.btnreporteproducto.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreporteproducto.FlatAppearance.BorderSize = 0;
+            this.btnreporteproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreporteproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreporteproducto.ForeColor = System.Drawing.Color.White;
+            this.btnreporteproducto.Location = new System.Drawing.Point(75, 49);
+            this.btnreporteproducto.Name = "btnreporteproducto";
+            this.btnreporteproducto.Size = new System.Drawing.Size(136, 30);
+            this.btnreporteproducto.TabIndex = 1;
+            this.btnreporteproducto.Text = "Productos";
+            this.btnreporteproducto.UseVisualStyleBackColor = false;
             // 
             // mnuconsultas
             // 
@@ -409,143 +594,111 @@
             this.btnventafechas.Text = "Ventas por fecha";
             this.btnventafechas.UseVisualStyleBackColor = false;
             // 
-            // mnuconfiguraciones
-            // 
-            this.mnuconfiguraciones.Controls.Add(this.btnconfiguraciones);
-            this.mnuconfiguraciones.Controls.Add(this.btnusuarios);
-            this.mnuconfiguraciones.Controls.Add(this.btnempleados);
-            this.mnuconfiguraciones.Location = new System.Drawing.Point(3, 262);
-            this.mnuconfiguraciones.MaximumSize = new System.Drawing.Size(214, 120);
-            this.mnuconfiguraciones.MinimumSize = new System.Drawing.Size(214, 37);
-            this.mnuconfiguraciones.Name = "mnuconfiguraciones";
-            this.mnuconfiguraciones.Size = new System.Drawing.Size(214, 46);
-            this.mnuconfiguraciones.TabIndex = 8;
-            // 
-            // btnconfiguraciones
-            // 
-            this.btnconfiguraciones.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnconfiguraciones.FlatAppearance.BorderSize = 0;
-            this.btnconfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnconfiguraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconfiguraciones.ForeColor = System.Drawing.Color.White;
-            this.btnconfiguraciones.Image = global::CapaPresentacion.Properties.Resources.confi_1;
-            this.btnconfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnconfiguraciones.Location = new System.Drawing.Point(3, 3);
-            this.btnconfiguraciones.Name = "btnconfiguraciones";
-            this.btnconfiguraciones.Size = new System.Drawing.Size(208, 40);
-            this.btnconfiguraciones.TabIndex = 0;
-            this.btnconfiguraciones.Text = "Configuraciones";
-            this.btnconfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnconfiguraciones.UseVisualStyleBackColor = false;
-            this.btnconfiguraciones.Click += new System.EventHandler(this.btnconfiguraciones_Click);
-            // 
-            // btnusuarios
-            // 
-            this.btnusuarios.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnusuarios.FlatAppearance.BorderSize = 0;
-            this.btnusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnusuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnusuarios.ForeColor = System.Drawing.Color.White;
-            this.btnusuarios.Location = new System.Drawing.Point(75, 84);
-            this.btnusuarios.Name = "btnusuarios";
-            this.btnusuarios.Size = new System.Drawing.Size(136, 30);
-            this.btnusuarios.TabIndex = 2;
-            this.btnusuarios.Text = "Usuarios";
-            this.btnusuarios.UseVisualStyleBackColor = false;
-            // 
-            // btnempleados
-            // 
-            this.btnempleados.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnempleados.FlatAppearance.BorderSize = 0;
-            this.btnempleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnempleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnempleados.ForeColor = System.Drawing.Color.White;
-            this.btnempleados.Location = new System.Drawing.Point(75, 49);
-            this.btnempleados.Name = "btnempleados";
-            this.btnempleados.Size = new System.Drawing.Size(136, 30);
-            this.btnempleados.TabIndex = 1;
-            this.btnempleados.Text = "Empleados";
-            this.btnempleados.UseVisualStyleBackColor = false;
-            // 
-            // mnureportes
-            // 
-            this.mnureportes.Controls.Add(this.btnreportes);
-            this.mnureportes.Controls.Add(this.btnreporteempleado);
-            this.mnureportes.Controls.Add(this.btnreportecliente);
-            this.mnureportes.Controls.Add(this.btnreporteproducto);
-            this.mnureportes.Location = new System.Drawing.Point(3, 314);
-            this.mnureportes.MaximumSize = new System.Drawing.Size(214, 160);
-            this.mnureportes.MinimumSize = new System.Drawing.Size(214, 37);
-            this.mnureportes.Name = "mnureportes";
-            this.mnureportes.Size = new System.Drawing.Size(214, 46);
-            this.mnureportes.TabIndex = 9;
-            // 
-            // btnreportes
-            // 
-            this.btnreportes.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreportes.FlatAppearance.BorderSize = 0;
-            this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportes.ForeColor = System.Drawing.Color.White;
-            this.btnreportes.Image = global::CapaPresentacion.Properties.Resources.reportes1;
-            this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnreportes.Location = new System.Drawing.Point(3, 3);
-            this.btnreportes.Name = "btnreportes";
-            this.btnreportes.Size = new System.Drawing.Size(208, 40);
-            this.btnreportes.TabIndex = 0;
-            this.btnreportes.Text = "Reportes";
-            this.btnreportes.UseVisualStyleBackColor = false;
-            this.btnreportes.Click += new System.EventHandler(this.btnreportes_Click);
-            // 
-            // btnreporteempleado
-            // 
-            this.btnreporteempleado.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreporteempleado.FlatAppearance.BorderSize = 0;
-            this.btnreporteempleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreporteempleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreporteempleado.ForeColor = System.Drawing.Color.White;
-            this.btnreporteempleado.Location = new System.Drawing.Point(75, 120);
-            this.btnreporteempleado.Name = "btnreporteempleado";
-            this.btnreporteempleado.Size = new System.Drawing.Size(136, 30);
-            this.btnreporteempleado.TabIndex = 3;
-            this.btnreporteempleado.Text = "Empleados";
-            this.btnreporteempleado.UseVisualStyleBackColor = false;
-            // 
-            // btnreportecliente
-            // 
-            this.btnreportecliente.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreportecliente.FlatAppearance.BorderSize = 0;
-            this.btnreportecliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportecliente.ForeColor = System.Drawing.Color.White;
-            this.btnreportecliente.Location = new System.Drawing.Point(75, 84);
-            this.btnreportecliente.Name = "btnreportecliente";
-            this.btnreportecliente.Size = new System.Drawing.Size(136, 30);
-            this.btnreportecliente.TabIndex = 2;
-            this.btnreportecliente.Text = "Clientes";
-            this.btnreportecliente.UseVisualStyleBackColor = false;
-            // 
-            // btnreporteproducto
-            // 
-            this.btnreporteproducto.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreporteproducto.FlatAppearance.BorderSize = 0;
-            this.btnreporteproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreporteproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreporteproducto.ForeColor = System.Drawing.Color.White;
-            this.btnreporteproducto.Location = new System.Drawing.Point(75, 49);
-            this.btnreporteproducto.Name = "btnreporteproducto";
-            this.btnreporteproducto.Size = new System.Drawing.Size(136, 30);
-            this.btnreporteproducto.TabIndex = 1;
-            this.btnreporteproducto.Text = "Productos";
-            this.btnreporteproducto.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(222, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(578, 100);
+            this.panel2.Size = new System.Drawing.Size(1180, 100);
             this.panel2.TabIndex = 2;
+            // 
+            // button7
+            // 
+            this.button7.ForeColor = System.Drawing.Color.Red;
+            this.button7.Image = global::CapaPresentacion.Properties.Resources.salir;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(1050, 29);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(95, 45);
+            this.button7.TabIndex = 6;
+            this.button7.Text = " Cerrar Sesión";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button6.Image = global::CapaPresentacion.Properties.Resources.stockminimo;
+            this.button6.Location = new System.Drawing.Point(530, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(97, 94);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Stock Min";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button5.Image = global::CapaPresentacion.Properties.Resources.empleados;
+            this.button5.Location = new System.Drawing.Point(427, 6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 91);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Empleados";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button4.Image = global::CapaPresentacion.Properties.Resources.compra;
+            this.button4.Location = new System.Drawing.Point(324, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(97, 91);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Compras";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button3.Image = global::CapaPresentacion.Properties.Resources.venta1;
+            this.button3.Location = new System.Drawing.Point(221, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 91);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Ventas";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button2.Image = global::CapaPresentacion.Properties.Resources.producto;
+            this.button2.Location = new System.Drawing.Point(118, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 91);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Productos";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.cliente;
+            this.button1.Location = new System.Drawing.Point(15, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 91);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Clientes";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // tmrsubmenu
             // 
@@ -556,7 +709,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 614);
+            this.ClientSize = new System.Drawing.Size(1402, 798);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -564,7 +717,10 @@
             this.IsMdiContainer = true;
             this.Name = "FrmInicio";
             this.Text = "FrmInicio";
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
@@ -574,9 +730,10 @@
             this.mnualmacen.ResumeLayout(false);
             this.mnucompra.ResumeLayout(false);
             this.mnuventa.ResumeLayout(false);
-            this.mnuconsultas.ResumeLayout(false);
             this.mnuconfiguraciones.ResumeLayout(false);
             this.mnureportes.ResumeLayout(false);
+            this.mnuconsultas.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -616,7 +773,17 @@
         private System.Windows.Forms.Button btnreportecliente;
         private System.Windows.Forms.Button btnreporteproducto;
         private System.Windows.Forms.Button btnreportes;
-        private System.Windows.Forms.Button btnreporteempleado;
+        private System.Windows.Forms.Button btnreportecategorias;
         private System.Windows.Forms.Timer tmrsubmenu;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

@@ -133,6 +133,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cliente {
+            get {
+                object obj = ResourceManager.GetObject("cliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap compra {
+            get {
+                object obj = ResourceManager.GetObject("compra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap compras {
             get {
                 object obj = ResourceManager.GetObject("compras", resourceCulture);
@@ -193,6 +213,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap empleados {
+            get {
+                object obj = ResourceManager.GetObject("empleados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximizar {
             get {
                 object obj = ResourceManager.GetObject("maximizar", resourceCulture);
@@ -223,6 +253,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap producto {
+            get {
+                object obj = ResourceManager.GetObject("producto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reportes {
             get {
                 object obj = ResourceManager.GetObject("reportes", resourceCulture);
@@ -243,9 +283,49 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap salir {
+            get {
+                object obj = ResourceManager.GetObject("salir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stockminimo {
+            get {
+                object obj = ResourceManager.GetObject("stockminimo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users {
+            get {
+                object obj = ResourceManager.GetObject("users", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap venta {
             get {
                 object obj = ResourceManager.GetObject("venta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap venta1 {
+            get {
+                object obj = ResourceManager.GetObject("venta1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

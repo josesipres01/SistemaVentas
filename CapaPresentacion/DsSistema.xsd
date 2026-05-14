@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsSistema" targetNamespace="http://tempuri.org/DsSistema.xsd" xmlns:mstns="http://tempuri.org/DsSistema.xsd" xmlns="http://tempuri.org/DsSistema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsSistema" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DsSistema" msprop:Generator_DataSetName="DsSistema">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtCategoria" msprop:Generator_RowEvHandlerName="dtCategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCategoriaRowDeleted" msprop:Generator_RowDeletingName="dtCategoriaRowDeleting" msprop:Generator_RowEvArgName="dtCategoriaRowChangeEvent" msprop:Generator_TablePropName="dtCategoria" msprop:Generator_RowChangedName="dtCategoriaRowChanged" msprop:Generator_RowChangingName="dtCategoriaRowChanging" msprop:Generator_TableClassName="dtCategoriaDataTable" msprop:Generator_RowClassName="dtCategoriaRow" msprop:Generator_TableVarName="tabledtCategoria" msprop:Generator_UserTableName="dtCategoria">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_UserColumnName="Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_UserColumnName="Descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

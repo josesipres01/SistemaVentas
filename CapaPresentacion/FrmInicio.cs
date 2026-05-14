@@ -20,9 +20,12 @@ namespace CapaPresentacion
         bool expanderconfiguraciones;
         bool expanderreportes;
 
-        public FrmInicio()
-        {
+        public FrmInicio(string nombreUsuario, string apellidoUsuario)
+        {   
             InitializeComponent();
+
+            lblNombre.Text = nombreUsuario;
+            lblApellido.Text = apellidoUsuario;
             MaximizedBounds = Screen.PrimaryScreen.WorkingArea;
         }
 
@@ -219,6 +222,316 @@ namespace CapaPresentacion
         {
             opcion = "mnureportes";
             tmrsubmenu.Start();
+        }
+
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoCliente frm = new FrmListadoCliente();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoProducto frm = new FrmListadoProducto();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string cajeroActual = lblNombre.Text + " " + lblApellido.Text;
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmVenta frm = new FrmVenta(cajeroActual);
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string cajeroActual = lblNombre.Text + " " + lblApellido.Text;
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmCompra frm = new FrmCompra(cajeroActual);
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoEmpleado frm = new FrmListadoEmpleado();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                // Cerramos el formulario actual (FrmInicio)
+                this.Close();
+
+                // Creamos y mostramos el formulario de Login nuevamente
+                Login frmLogin = new Login();
+                frmLogin.Show();
+            }
+        }
+
+        private void btncategoria_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoCategoria frm = new FrmListadoCategoria();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void FrmInicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnproducto_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoProducto frm = new FrmListadoProducto();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+
+        }
+
+        private void btnproveedor_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoProveedor frm = new FrmListadoProveedor();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btngenerarventa_Click(object sender, EventArgs e)
+        {
+            string cajeroActual = lblNombre.Text + " " + lblApellido.Text;
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmVenta frm = new FrmVenta(cajeroActual);
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btnclientes_Click(object sender, EventArgs e)
+        {
+            string cajeroActual = lblNombre.Text + " " + lblApellido.Text;
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoCliente frm = new FrmListadoCliente();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btnempleados_Click(object sender, EventArgs e)
+        {
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoEmpleado frm = new FrmListadoEmpleado();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btnusuarios_Click(object sender, EventArgs e)
+        {
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmListadoUsuario frm = new FrmListadoUsuario();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btnreportecategorias_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmReporteCategoria frm = new FrmReporteCategoria();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
         }
     }
 }
