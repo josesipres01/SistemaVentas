@@ -20,8 +20,6 @@ namespace CapaPresentacion
                 // 1. Obtenemos los datos
                 DataTable dt = CNCategoria.Listar();
 
-                // ---> LA PRUEBA DE FUEGO <---
-                MessageBox.Show("Registros que llegaron a C#: " + dt.Rows.Count, "Prueba");
 
                 // 2. Renombramos columnas
                 if (dt.Columns.Count >= 2)

@@ -104,6 +104,8 @@ namespace CapaDatos
                 if (resul.Equals("OK"))
                 {
                     SqlTra.Commit(); // Guarda permanente en la Base de Datos
+                    resul = venta.Idventa.ToString(); // convierte el "OK" en el número de ID
+
                 }
                 else
                 {
@@ -207,6 +209,21 @@ namespace CapaDatos
                 if (conexion.State == ConnectionState.Open) conexion.Close();
             }
             return resul;
+        }
+        public DataTable ImprimirFactura(int idventa)
+        {
+            DataTable dt = new DataTable("factura");
+            SqlConnection conexion = new SqlConnection(Conexión.Conn);
+            try
+            {
+                SqlCommand Cmd = new SqlCommand("sp_imprimir_factura", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@idventa", idventa);
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(dt);
+            }
+            catch (Exception ex) { dt = null; }
+            return dt;
         }
     }
 }

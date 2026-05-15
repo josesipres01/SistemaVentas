@@ -182,6 +182,7 @@ namespace CapaPresentacion
 
             try
             {
+                // 1. VALIDACIONES DE SEGURIDAD
                 if (dlistadocompra.Rows.Count == 0 || (dlistadocompra.AllowUserToAddRows && dlistadocompra.Rows.Count == 1))
                 {
                     MessageBox.Show("No hay productos en la venta.", "DonRoberton", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -194,7 +195,7 @@ namespace CapaPresentacion
                     return;
                 }
 
-                // PREPARAR LA LISTA DE DETALLES
+                // 2. PREPARAR LA LISTA DE DETALLES
                 List<CDDetalleVenta> detalles = new List<CDDetalleVenta>();
                 foreach (DataGridViewRow fila in dlistadocompra.Rows)
                 {
@@ -211,27 +212,30 @@ namespace CapaPresentacion
                     }
                 }
 
-                // OBTENER TIPO DE DOCUMENTO
-                // Si ya creaste tu combobox (ej. cbtipodocumento), descomenta la siguiente línea y borra la que dice "Ticket":
-                // string tipoDoc = cbtipodocumento.Text; 
-                string tipoDoc = "Ticket";
+                string tipoDoc = "Ticket"; // O puedes usar tu ComboBox si lo agregaste
 
-                // LLAMAR A LA CAPA DE NEGOCIO PARA GUARDAR
+                // 3. LLAMAR A LA CAPA DE NEGOCIO PARA GUARDAR
                 string rpta = CNVenta.Guardar(
                     DateTime.Now,
-                    tipoDoc,  // Enviamos el tipo de documento
+                    tipoDoc,
                     Convert.ToDecimal(tboxsubtotal.Text),
                     Convert.ToDecimal(tboxiva.Text),
                     Convert.ToDecimal(tboxtotal.Text),
                     idClienteFinal,
-                    2, // ID Usuario Temporal
+                    2, // ID Usuario Temporal (Tu usuario de la base de datos)
                     detalles
                 );
 
-                if (rpta.Equals("OK"))
+                // 4. RESPUESTA FINAL (Abre la factura si se genera un ID)
+                if (int.TryParse(rpta, out int idVentaGenerada))
                 {
                     MessageBox.Show("¡Venta Realizada con éxito!\nEl stock se actualizó automáticamente.", "DonRoberton", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    // ¡ABRIMOS LA FACTURA!
+                    FrmReporteFactura frmFactura = new FrmReporteFactura(idVentaGenerada);
+                    frmFactura.ShowDialog();
+
+                    // Limpiar pantalla para el siguiente cliente
                     dlistadocompra.Rows.Clear();
                     tboxsubtotal.Clear();
                     tboxiva.Clear();
@@ -241,7 +245,15 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar la venta: " + rpta, "DonRoberton", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Si llega aquí diciendo "OK", avisa que te faltó modificar la Capa de Datos
+                    if (rpta == "OK")
+                    {
+                        MessageBox.Show("Venta guardada, pero falta devolver el ID de la venta en la clase CDVenta.cs.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al guardar la venta: " + rpta, "DonRoberton", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)

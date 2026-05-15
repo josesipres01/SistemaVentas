@@ -533,5 +533,100 @@ namespace CapaPresentacion
             // 4. Mostramos la ventana
             frm.Show();
         }
+
+        private void btngenerarcompra_Click(object sender, EventArgs e)
+        {
+            string cajeroActual = lblNombre.Text + " " + lblApellido.Text;
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmCompra frm = new FrmCompra(cajeroActual);
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btnreporteproducto_Click(object sender, EventArgs e)
+        {
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmReporteProducto frm = new FrmReporteProducto();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnreportecliente_Click(object sender, EventArgs e)
+        {
+
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmReporteCliente frm = new FrmReporteCliente();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
+
+        private void btnreporteempleado_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmReporteEmpleado frm = new FrmReporteEmpleado();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+
+        }
     }
 }

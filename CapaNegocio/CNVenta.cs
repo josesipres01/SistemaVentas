@@ -13,8 +13,6 @@ namespace CapaNegocio
             return Datos.Listar();
         }
 
-        // CORRECCIÓN: Pedimos la Lista de Detalles y el Tipo de Documento. 
-        // Ocultamos serie, numDocumento y estado para llenarlos en automático.
         public static string Guardar(DateTime fecha, string tipoDocumento, decimal subtotal, decimal iva,
                                      decimal total, int idcliente, int idusuario, List<CDDetalleVenta> detalles)
         {
@@ -68,6 +66,11 @@ namespace CapaNegocio
             CDVenta Datos = new CDVenta();
             Datos.Buscar = textoBuscar;
             return Datos.BuscarNumDocumento(Datos);
+        }
+        public static DataTable ImprimirFactura(int idventa)
+        {
+            CDVenta Datos = new CDVenta();
+            return Datos.ImprimirFactura(idventa);
         }
     }
 }

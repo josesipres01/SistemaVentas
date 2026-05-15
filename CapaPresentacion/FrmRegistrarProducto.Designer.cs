@@ -55,6 +55,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picCodigoBarras = new System.Windows.Forms.PictureBox();
+            this.btngenerarcodigo = new System.Windows.Forms.Button();
+            this.btnimprimircodigo = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCodigoBarras)).BeginInit();
             this.SuspendLayout();
             // 
             // btncancerlar
@@ -290,11 +296,63 @@
             this.label13.TabIndex = 51;
             this.label13.Text = "$";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnimprimircodigo);
+            this.groupBox1.Controls.Add(this.btngenerarcodigo);
+            this.groupBox1.Controls.Add(this.picCodigoBarras);
+            this.groupBox1.Location = new System.Drawing.Point(397, 339);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(354, 100);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Código de Barras";
+            // 
+            // picCodigoBarras
+            // 
+            this.picCodigoBarras.Location = new System.Drawing.Point(6, 21);
+            this.picCodigoBarras.Name = "picCodigoBarras";
+            this.picCodigoBarras.Size = new System.Drawing.Size(193, 72);
+            this.picCodigoBarras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picCodigoBarras.TabIndex = 0;
+            this.picCodigoBarras.TabStop = false;
+            // 
+            // btngenerarcodigo
+            // 
+            this.btngenerarcodigo.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btngenerarcodigo.FlatAppearance.BorderSize = 0;
+            this.btngenerarcodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngenerarcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngenerarcodigo.ForeColor = System.Drawing.Color.Transparent;
+            this.btngenerarcodigo.Location = new System.Drawing.Point(246, 18);
+            this.btngenerarcodigo.Name = "btngenerarcodigo";
+            this.btngenerarcodigo.Size = new System.Drawing.Size(96, 23);
+            this.btngenerarcodigo.TabIndex = 1;
+            this.btngenerarcodigo.Text = "Generar";
+            this.btngenerarcodigo.UseVisualStyleBackColor = false;
+            this.btngenerarcodigo.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnimprimircodigo
+            // 
+            this.btnimprimircodigo.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnimprimircodigo.FlatAppearance.BorderSize = 0;
+            this.btnimprimircodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimprimircodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnimprimircodigo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnimprimircodigo.Location = new System.Drawing.Point(246, 70);
+            this.btnimprimircodigo.Name = "btnimprimircodigo";
+            this.btnimprimircodigo.Size = new System.Drawing.Size(96, 23);
+            this.btnimprimircodigo.TabIndex = 2;
+            this.btnimprimircodigo.Text = "Imprimir";
+            this.btnimprimircodigo.UseVisualStyleBackColor = false;
+            this.btnimprimircodigo.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FrmRegistrarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 518);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -326,6 +384,8 @@
             this.Name = "FrmRegistrarProducto";
             this.Text = "FrmRegistrarProducto";
             this.Load += new System.EventHandler(this.FrmRegistrarProducto_Load);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCodigoBarras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +420,9 @@
         public System.Windows.Forms.DateTimePicker dtfechaingreso;
         public System.Windows.Forms.DateTimePicker dtfechavencimiento;
         public System.Windows.Forms.ComboBox cbidcategoria;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnimprimircodigo;
+        private System.Windows.Forms.Button btngenerarcodigo;
+        private System.Windows.Forms.PictureBox picCodigoBarras;
     }
 }

@@ -1,13 +1,17 @@
-﻿using CapaNegocio;
+﻿using BarcodeLib;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CapaPresentacion
 {
@@ -147,6 +151,60 @@ namespace CapaPresentacion
         private void dtfechavencimiento_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Validamos que hayan escrito un código
+            if (string.IsNullOrWhiteSpace(txtcodigo.Text))
+            {
+                MessageBox.Show("Por favor ingrese un código primero.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                Barcode codigoBarras = new Barcode();
+                codigoBarras.IncludeLabel = true; // Para que muestre los números abajo de las rayitas
+
+                // Generamos el código (Usamos CODE128 que es el estándar universal)
+                Image img = codigoBarras.Encode(TYPE.CODE128, txtcodigo.Text, Color.Black, Color.White, 250, 100);
+                // Lo mostramos en el PictureBox
+                picCodigoBarras.Image = img;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar: " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (picCodigoBarras.Image == null)
+            {
+                MessageBox.Show("Primero debe generar un código de barras.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Creamos el documento a imprimir
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(ImprimirImagen);
+
+            // Opcional: Mostrar la ventana de elegir impresora
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print();
+            }
+        }
+
+        // Método auxiliar que "dibuja" la imagen en la hoja de papel
+        private void ImprimirImagen(object sender, PrintPageEventArgs e)
+        {
+            // Dibuja el código de barras en la coordenada X=100, Y=100 de la hoja
+            e.Graphics.DrawImage(picCodigoBarras.Image, new Point(100, 100));
         }
     }
 }
