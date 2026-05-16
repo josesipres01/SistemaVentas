@@ -225,5 +225,81 @@ namespace CapaDatos
             catch (Exception ex) { dt = null; }
             return dt;
         }
+        public DataTable BuscarFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable resul = new DataTable("venta");
+            SqlConnection conexion = new SqlConnection();
+            try
+            {
+                conexion.ConnectionString = Conexión.Conn;
+                SqlCommand Cmd = new SqlCommand("spbuscar_venta_fecha", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+
+                // Pasamos las fechas a SQL
+                Cmd.Parameters.AddWithValue("@fechainicio", fechaInicio);
+                Cmd.Parameters.AddWithValue("@fechafin", fechaFin);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(resul);
+            }
+            catch (Exception ex)
+            {
+                resul = null;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open) conexion.Close();
+            }
+            return resul;
+        }
+        public string AnularVenta(int idventa)
+        {
+            string resul = "";
+            SqlConnection conexion = new SqlConnection();
+            try
+            {
+                conexion.ConnectionString = Conexión.Conn;
+                conexion.Open();
+                SqlCommand Cmd = new SqlCommand("spanular_venta", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+
+                Cmd.Parameters.AddWithValue("@idventa", idventa);
+
+                resul = Cmd.ExecuteNonQuery() > 0 ? "OK" : "No se pudo anular la venta";
+            }
+            catch (Exception ex)
+            {
+                resul = ex.Message;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open) conexion.Close();
+            }
+            return resul;
+        }
+        public DataTable MostrarDetalle(int idventa)
+        {
+            DataTable resul = new DataTable("detalle");
+            SqlConnection conexion = new SqlConnection();
+            try
+            {
+                conexion.ConnectionString = Conexión.Conn;
+                SqlCommand Cmd = new SqlCommand("spmostrar_detalle_venta", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@idventa", idventa);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(resul);
+            }
+            catch (Exception ex)
+            {
+                resul = null;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open) conexion.Close();
+            }
+            return resul;
+        }
     }
 }

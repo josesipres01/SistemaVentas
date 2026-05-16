@@ -46,17 +46,18 @@
             this.mnuconfiguraciones = new System.Windows.Forms.Panel();
             this.btnusuarios = new System.Windows.Forms.Button();
             this.btnempleados = new System.Windows.Forms.Button();
-            this.mnureportes = new System.Windows.Forms.Panel();
-            this.btnreportecategorias = new System.Windows.Forms.Button();
-            this.btnreportecliente = new System.Windows.Forms.Button();
-            this.btnreporteproducto = new System.Windows.Forms.Button();
             this.mnuconsultas = new System.Windows.Forms.Panel();
             this.btnstockminimo = new System.Windows.Forms.Button();
             this.btncomprafechas = new System.Windows.Forms.Button();
             this.btnventafechas = new System.Windows.Forms.Button();
+            this.mnureportes = new System.Windows.Forms.Panel();
+            this.btnreportecategorias = new System.Windows.Forms.Button();
+            this.btnreporteempleado = new System.Windows.Forms.Button();
+            this.btnreportecliente = new System.Windows.Forms.Button();
+            this.btnreporteproducto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tmrsubmenu = new System.Windows.Forms.Timer(this.components);
-            this.btnreporteempleado = new System.Windows.Forms.Button();
+            this.btnfechavencimiento = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -69,8 +70,8 @@
             this.btncompras = new System.Windows.Forms.Button();
             this.btnventas = new System.Windows.Forms.Button();
             this.btnconfiguraciones = new System.Windows.Forms.Button();
-            this.btnconsultas = new System.Windows.Forms.Button();
             this.btnreportes = new System.Windows.Forms.Button();
+            this.btnconsultas = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
@@ -82,8 +83,8 @@
             this.mnucompra.SuspendLayout();
             this.mnuventa.SuspendLayout();
             this.mnuconfiguraciones.SuspendLayout();
-            this.mnureportes.SuspendLayout();
             this.mnuconsultas.SuspendLayout();
+            this.mnureportes.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -140,8 +141,8 @@
             this.flowLayoutPanel1.Controls.Add(this.mnucompra);
             this.flowLayoutPanel1.Controls.Add(this.mnuventa);
             this.flowLayoutPanel1.Controls.Add(this.mnuconfiguraciones);
-            this.flowLayoutPanel1.Controls.Add(this.mnuconsultas);
             this.flowLayoutPanel1.Controls.Add(this.mnureportes);
+            this.flowLayoutPanel1.Controls.Add(this.mnuconsultas);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 100);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -316,76 +317,18 @@
             this.btnempleados.UseVisualStyleBackColor = false;
             this.btnempleados.Click += new System.EventHandler(this.btnempleados_Click);
             // 
-            // mnureportes
-            // 
-            this.mnureportes.Controls.Add(this.btnreportes);
-            this.mnureportes.Controls.Add(this.btnreportecategorias);
-            this.mnureportes.Controls.Add(this.btnreporteempleado);
-            this.mnureportes.Controls.Add(this.btnreportecliente);
-            this.mnureportes.Controls.Add(this.btnreporteproducto);
-            this.mnureportes.Location = new System.Drawing.Point(3, 367);
-            this.mnureportes.MaximumSize = new System.Drawing.Size(214, 200);
-            this.mnureportes.MinimumSize = new System.Drawing.Size(214, 37);
-            this.mnureportes.Name = "mnureportes";
-            this.mnureportes.Size = new System.Drawing.Size(214, 47);
-            this.mnureportes.TabIndex = 9;
-            // 
-            // btnreportecategorias
-            // 
-            this.btnreportecategorias.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreportecategorias.FlatAppearance.BorderSize = 0;
-            this.btnreportecategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportecategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportecategorias.ForeColor = System.Drawing.Color.White;
-            this.btnreportecategorias.Location = new System.Drawing.Point(75, 120);
-            this.btnreportecategorias.Name = "btnreportecategorias";
-            this.btnreportecategorias.Size = new System.Drawing.Size(136, 30);
-            this.btnreportecategorias.TabIndex = 3;
-            this.btnreportecategorias.Text = "Categorías";
-            this.btnreportecategorias.UseVisualStyleBackColor = false;
-            this.btnreportecategorias.Click += new System.EventHandler(this.btnreportecategorias_Click);
-            // 
-            // btnreportecliente
-            // 
-            this.btnreportecliente.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreportecliente.FlatAppearance.BorderSize = 0;
-            this.btnreportecliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportecliente.ForeColor = System.Drawing.Color.White;
-            this.btnreportecliente.Location = new System.Drawing.Point(75, 84);
-            this.btnreportecliente.Name = "btnreportecliente";
-            this.btnreportecliente.Size = new System.Drawing.Size(136, 30);
-            this.btnreportecliente.TabIndex = 2;
-            this.btnreportecliente.Text = "Clientes";
-            this.btnreportecliente.UseVisualStyleBackColor = false;
-            this.btnreportecliente.Click += new System.EventHandler(this.btnreportecliente_Click);
-            // 
-            // btnreporteproducto
-            // 
-            this.btnreporteproducto.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreporteproducto.FlatAppearance.BorderSize = 0;
-            this.btnreporteproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreporteproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreporteproducto.ForeColor = System.Drawing.Color.White;
-            this.btnreporteproducto.Location = new System.Drawing.Point(75, 49);
-            this.btnreporteproducto.Name = "btnreporteproducto";
-            this.btnreporteproducto.Size = new System.Drawing.Size(136, 30);
-            this.btnreporteproducto.TabIndex = 1;
-            this.btnreporteproducto.Text = "Productos";
-            this.btnreporteproducto.UseVisualStyleBackColor = false;
-            this.btnreporteproducto.Click += new System.EventHandler(this.btnreporteproducto_Click);
-            // 
             // mnuconsultas
             // 
+            this.mnuconsultas.Controls.Add(this.btnfechavencimiento);
             this.mnuconsultas.Controls.Add(this.btnconsultas);
             this.mnuconsultas.Controls.Add(this.btnstockminimo);
             this.mnuconsultas.Controls.Add(this.btncomprafechas);
             this.mnuconsultas.Controls.Add(this.btnventafechas);
-            this.mnuconsultas.Location = new System.Drawing.Point(3, 314);
-            this.mnuconsultas.MaximumSize = new System.Drawing.Size(214, 160);
+            this.mnuconsultas.Location = new System.Drawing.Point(3, 367);
+            this.mnuconsultas.MaximumSize = new System.Drawing.Size(214, 200);
             this.mnuconsultas.MinimumSize = new System.Drawing.Size(214, 37);
             this.mnuconsultas.Name = "mnuconsultas";
-            this.mnuconsultas.Size = new System.Drawing.Size(214, 47);
+            this.mnuconsultas.Size = new System.Drawing.Size(214, 46);
             this.mnuconsultas.TabIndex = 7;
             // 
             // btnstockminimo
@@ -429,6 +372,81 @@
             this.btnventafechas.TabIndex = 1;
             this.btnventafechas.Text = "Ventas por fecha";
             this.btnventafechas.UseVisualStyleBackColor = false;
+            this.btnventafechas.Click += new System.EventHandler(this.btnventafechas_Click);
+            // 
+            // mnureportes
+            // 
+            this.mnureportes.Controls.Add(this.btnreportes);
+            this.mnureportes.Controls.Add(this.btnreportecategorias);
+            this.mnureportes.Controls.Add(this.btnreporteempleado);
+            this.mnureportes.Controls.Add(this.btnreportecliente);
+            this.mnureportes.Controls.Add(this.btnreporteproducto);
+            this.mnureportes.Location = new System.Drawing.Point(3, 314);
+            this.mnureportes.MaximumSize = new System.Drawing.Size(214, 200);
+            this.mnureportes.MinimumSize = new System.Drawing.Size(214, 37);
+            this.mnureportes.Name = "mnureportes";
+            this.mnureportes.Size = new System.Drawing.Size(214, 47);
+            this.mnureportes.TabIndex = 9;
+            // 
+            // btnreportecategorias
+            // 
+            this.btnreportecategorias.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreportecategorias.FlatAppearance.BorderSize = 0;
+            this.btnreportecategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportecategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportecategorias.ForeColor = System.Drawing.Color.White;
+            this.btnreportecategorias.Location = new System.Drawing.Point(75, 120);
+            this.btnreportecategorias.Name = "btnreportecategorias";
+            this.btnreportecategorias.Size = new System.Drawing.Size(136, 30);
+            this.btnreportecategorias.TabIndex = 3;
+            this.btnreportecategorias.Text = "Categorías";
+            this.btnreportecategorias.UseVisualStyleBackColor = false;
+            this.btnreportecategorias.Click += new System.EventHandler(this.btnreportecategorias_Click);
+            // 
+            // btnreporteempleado
+            // 
+            this.btnreporteempleado.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreporteempleado.FlatAppearance.BorderSize = 0;
+            this.btnreporteempleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreporteempleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreporteempleado.ForeColor = System.Drawing.Color.White;
+            this.btnreporteempleado.Location = new System.Drawing.Point(75, 156);
+            this.btnreporteempleado.Name = "btnreporteempleado";
+            this.btnreporteempleado.Size = new System.Drawing.Size(136, 30);
+            this.btnreporteempleado.TabIndex = 4;
+            this.btnreporteempleado.Text = "Empleados";
+            this.btnreporteempleado.UseVisualStyleBackColor = false;
+            this.btnreporteempleado.Click += new System.EventHandler(this.btnreporteempleado_Click);
+            // 
+            // btnreportecliente
+            // 
+            this.btnreportecliente.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreportecliente.FlatAppearance.BorderSize = 0;
+            this.btnreportecliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportecliente.ForeColor = System.Drawing.Color.White;
+            this.btnreportecliente.Location = new System.Drawing.Point(75, 84);
+            this.btnreportecliente.Name = "btnreportecliente";
+            this.btnreportecliente.Size = new System.Drawing.Size(136, 30);
+            this.btnreportecliente.TabIndex = 2;
+            this.btnreportecliente.Text = "Clientes";
+            this.btnreportecliente.UseVisualStyleBackColor = false;
+            this.btnreportecliente.Click += new System.EventHandler(this.btnreportecliente_Click);
+            // 
+            // btnreporteproducto
+            // 
+            this.btnreporteproducto.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnreporteproducto.FlatAppearance.BorderSize = 0;
+            this.btnreporteproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreporteproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreporteproducto.ForeColor = System.Drawing.Color.White;
+            this.btnreporteproducto.Location = new System.Drawing.Point(75, 49);
+            this.btnreporteproducto.Name = "btnreporteproducto";
+            this.btnreporteproducto.Size = new System.Drawing.Size(136, 30);
+            this.btnreporteproducto.TabIndex = 1;
+            this.btnreporteproducto.Text = "Productos";
+            this.btnreporteproducto.UseVisualStyleBackColor = false;
+            this.btnreporteproducto.Click += new System.EventHandler(this.btnreporteproducto_Click);
             // 
             // panel2
             // 
@@ -450,20 +468,19 @@
             this.tmrsubmenu.Interval = 10;
             this.tmrsubmenu.Tick += new System.EventHandler(this.tmrsubmenu_Tick);
             // 
-            // btnreporteempleado
+            // btnfechavencimiento
             // 
-            this.btnreporteempleado.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnreporteempleado.FlatAppearance.BorderSize = 0;
-            this.btnreporteempleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreporteempleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreporteempleado.ForeColor = System.Drawing.Color.White;
-            this.btnreporteempleado.Location = new System.Drawing.Point(75, 156);
-            this.btnreporteempleado.Name = "btnreporteempleado";
-            this.btnreporteempleado.Size = new System.Drawing.Size(136, 30);
-            this.btnreporteempleado.TabIndex = 4;
-            this.btnreporteempleado.Text = "Empleados";
-            this.btnreporteempleado.UseVisualStyleBackColor = false;
-            this.btnreporteempleado.Click += new System.EventHandler(this.btnreporteempleado_Click);
+            this.btnfechavencimiento.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnfechavencimiento.FlatAppearance.BorderSize = 0;
+            this.btnfechavencimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfechavencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfechavencimiento.ForeColor = System.Drawing.Color.White;
+            this.btnfechavencimiento.Location = new System.Drawing.Point(64, 156);
+            this.btnfechavencimiento.Name = "btnfechavencimiento";
+            this.btnfechavencimiento.Size = new System.Drawing.Size(147, 30);
+            this.btnfechavencimiento.TabIndex = 4;
+            this.btnfechavencimiento.Text = "Fecha Vencimiento";
+            this.btnfechavencimiento.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -634,23 +651,6 @@
             this.btnconfiguraciones.UseVisualStyleBackColor = false;
             this.btnconfiguraciones.Click += new System.EventHandler(this.btnconfiguraciones_Click);
             // 
-            // btnconsultas
-            // 
-            this.btnconsultas.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnconsultas.FlatAppearance.BorderSize = 0;
-            this.btnconsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnconsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconsultas.ForeColor = System.Drawing.Color.White;
-            this.btnconsultas.Image = global::CapaPresentacion.Properties.Resources.consultas1;
-            this.btnconsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnconsultas.Location = new System.Drawing.Point(3, 3);
-            this.btnconsultas.Name = "btnconsultas";
-            this.btnconsultas.Size = new System.Drawing.Size(208, 40);
-            this.btnconsultas.TabIndex = 0;
-            this.btnconsultas.Text = "Consultas";
-            this.btnconsultas.UseVisualStyleBackColor = false;
-            this.btnconsultas.Click += new System.EventHandler(this.btnconsultas_Click);
-            // 
             // btnreportes
             // 
             this.btnreportes.BackColor = System.Drawing.SystemColors.Highlight;
@@ -667,6 +667,23 @@
             this.btnreportes.Text = "Reportes";
             this.btnreportes.UseVisualStyleBackColor = false;
             this.btnreportes.Click += new System.EventHandler(this.btnreportes_Click);
+            // 
+            // btnconsultas
+            // 
+            this.btnconsultas.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnconsultas.FlatAppearance.BorderSize = 0;
+            this.btnconsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconsultas.ForeColor = System.Drawing.Color.White;
+            this.btnconsultas.Image = global::CapaPresentacion.Properties.Resources.consultas1;
+            this.btnconsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnconsultas.Location = new System.Drawing.Point(3, 3);
+            this.btnconsultas.Name = "btnconsultas";
+            this.btnconsultas.Size = new System.Drawing.Size(208, 40);
+            this.btnconsultas.TabIndex = 0;
+            this.btnconsultas.Text = "Consultas";
+            this.btnconsultas.UseVisualStyleBackColor = false;
+            this.btnconsultas.Click += new System.EventHandler(this.btnconsultas_Click);
             // 
             // pictureBox2
             // 
@@ -746,8 +763,8 @@
             this.mnucompra.ResumeLayout(false);
             this.mnuventa.ResumeLayout(false);
             this.mnuconfiguraciones.ResumeLayout(false);
-            this.mnureportes.ResumeLayout(false);
             this.mnuconsultas.ResumeLayout(false);
+            this.mnureportes.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -807,5 +824,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnreporteempleado;
+        private System.Windows.Forms.Button btnfechavencimiento;
     }
 }

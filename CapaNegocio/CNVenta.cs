@@ -72,5 +72,20 @@ namespace CapaNegocio
             CDVenta Datos = new CDVenta();
             return Datos.ImprimirFactura(idventa);
         }
+        public static DataTable BuscarFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            CDVenta Datos = new CDVenta();
+            return Datos.BuscarFechas(fechaInicio, fechaFin);
+        }
+        public static string Anular(int idventa)
+        {
+            CDVenta Datos = new CDVenta();
+            return Datos.AnularVenta(idventa);
+        }
+        public static DataTable MostrarDetalle(int idventa)
+        {
+            CDVenta Datos = new CDVenta();
+            return Datos.MostrarDetalle(idventa);
+        }
     }
 }

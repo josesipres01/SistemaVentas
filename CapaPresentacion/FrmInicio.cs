@@ -628,5 +628,26 @@ namespace CapaPresentacion
             frm.Show();
 
         }
+
+        private void btnventafechas_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            // 2. Creamos la ventana nueva
+            FrmConsultaVentas frm = new FrmConsultaVentas();
+
+            frm.MdiParent = this;
+
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. ESTIRAR LA VENTANA (Para que no quede flotando y se vea como página web)
+            frm.Dock = DockStyle.Fill;
+
+            // 4. Mostramos la ventana
+            frm.Show();
+        }
     }
 }

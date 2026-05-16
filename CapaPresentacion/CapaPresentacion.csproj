@@ -122,6 +122,18 @@
     <Compile Include="FrmCompra.Designer.cs">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaVentas.Designer.cs">
+      <DependentUpon>FrmConsultaVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetalleVenta.Designer.cs">
+      <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,12 @@
     <Compile Include="FrmReporteCliente.Designer.cs">
       <DependentUpon>FrmReporteCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteConsultaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteConsultaVentas.Designer.cs">
+      <DependentUpon>FrmReporteConsultaVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporteEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +300,12 @@
     <EmbeddedResource Include="FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaVentas.resx">
+      <DependentUpon>FrmConsultaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetalleVenta.resx">
+      <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +351,9 @@
     <EmbeddedResource Include="FrmReporteCliente.resx">
       <DependentUpon>FrmReporteCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteConsultaVentas.resx">
+      <DependentUpon>FrmReporteConsultaVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteEmpleado.resx">
       <DependentUpon>FrmReporteEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +384,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptCategoria.rdlc" />
     <EmbeddedResource Include="RptCliente.rdlc" />
+    <EmbeddedResource Include="RptConsultaVentas.rdlc" />
     <EmbeddedResource Include="RptEmpleado.rdlc" />
     <EmbeddedResource Include="RptFactura.rdlc" />
     <EmbeddedResource Include="RptProducto.rdlc" />
