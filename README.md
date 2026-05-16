@@ -19,9 +19,9 @@ El proyecto está desarrollado utilizando **C#** con el framework **.NET**, sigu
 
 ## 🚀 Tecnologías Utilizadas
 *   **Lenguaje:** C#
-*   **Framework:** .NET (ASP.NET MVC / WinForms - *ajustar según corresponda*)
+*   **Framework:** .NET (WinForms) 
 *   **Base de Datos:** Microsoft SQL Server
-*   **Frontend:** Bootstrap, HTML5, CSS3 (si es Web) / Material Design (si es Desktop)
+*   **Frontend:** Material Design 
 *   **ORM/Acceso a datos:** Entity Framework / Dapper
 
 ## 🛠️ Instalación y Configuración
