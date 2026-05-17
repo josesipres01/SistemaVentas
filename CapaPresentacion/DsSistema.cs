@@ -4,6 +4,14 @@
 
     partial class DsSistema
     {
+        partial class dtFacturaCompraDataTable
+        {
+        }
+
+        partial class dtConsultaComprasDataTable
+        {
+        }
+
         partial class dtClienteDataTable
         {
         }

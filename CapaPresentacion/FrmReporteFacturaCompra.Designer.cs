@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FrmReporteConsultaVentas
+    partial class FrmReporteFacturaCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,23 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.RptConsultaVentas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.RptFacturaCompra.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, -3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1275, 752);
+            this.reportViewer1.Size = new System.Drawing.Size(962, 726);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // FrmReporteConsultaVentas
+            // FrmReporteFacturaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 752);
+            this.ClientSize = new System.Drawing.Size(852, 718);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmReporteConsultaVentas";
-            this.Load += new System.EventHandler(this.FrmReporteConsultaVentas_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "FrmReporteFacturaCompra";
+            this.Load += new System.EventHandler(this.FrmReporteFacturaCompra_Load);
             this.ResumeLayout(false);
 
         }

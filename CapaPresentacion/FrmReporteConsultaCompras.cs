@@ -1,32 +1,36 @@
 ﻿using CapaNegocio;
 using Microsoft.Reporting.WinForms;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmReporteConsultaVentas : Form
+    public partial class FrmReporteConsultaCompras : Form
     {
-        // Variables para recibir las fechas desde la otra pantalla
         private DateTime _fechaInicio;
         private DateTime _fechaFin;
-
-        // Constructor modificado para exigir las dos fechas
-        public FrmReporteConsultaVentas(DateTime inicio, DateTime fin)
+        public FrmReporteConsultaCompras(DateTime inicio, DateTime fin)
         {
             InitializeComponent();
             this._fechaInicio = inicio;
             this._fechaFin = fin;
-            this.Load += new EventHandler(FrmReporteConsultaVentas_Load);
+            this.Load += new EventHandler(FrmReporteConsultaCompras_Load);
         }
 
-        private void FrmReporteConsultaVentas_Load(object sender, EventArgs e)
+        private void FrmReporteConsultaCompras_Load(object sender, EventArgs e)
         {
+
             try
             {
-                // 1. Buscamos las ventas en ese rango de fechas
-                DataTable dt = CNVenta.BuscarFechas(_fechaInicio, _fechaFin);
+                // 1. Buscamos las compras en ese rango de fechas
+                DataTable dt = CNCompra.BuscarFechas(_fechaInicio, _fechaFin);
 
                 // 2. Enviamos las fechas a los parámetros del reporte (.rdlc)
                 ReportParameter[] prm = new ReportParameter[2];
@@ -47,9 +51,20 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al generar el reporte: " + ex.Message, "DonRoberton", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.reportViewer1.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewer1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewer1_Load_2(object sender, EventArgs e)
         {
 
         }

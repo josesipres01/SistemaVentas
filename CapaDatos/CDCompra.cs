@@ -88,5 +88,93 @@ namespace CapaDatos
             }
             return resul;
         }
+        public DataTable BuscarFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable resul = new DataTable("compra");
+            SqlConnection conexion = new SqlConnection();
+            try
+            {
+                conexion.ConnectionString = Conexión.Conn;
+                SqlCommand Cmd = new SqlCommand("spbuscar_compra_fecha", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+
+                Cmd.Parameters.AddWithValue("@fechainicio", fechaInicio);
+                Cmd.Parameters.AddWithValue("@fechafin", fechaFin);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(resul);
+            }
+            catch (Exception ex)
+            {
+                resul = null;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open) conexion.Close();
+            }
+            return resul;
+        }
+        public string Anular(int idcompra)
+        {
+            string resul = "";
+            SqlConnection conexion = new SqlConnection();
+            try
+            {
+                conexion.ConnectionString = Conexión.Conn;
+                conexion.Open();
+                SqlCommand Cmd = new SqlCommand("spanular_compra", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@idcompra", idcompra);
+                resul = Cmd.ExecuteNonQuery() > 0 ? "OK" : "No se pudo anular la compra";
+            }
+            catch (Exception ex)
+            {
+                resul = ex.Message;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open) conexion.Close();
+            }
+            return resul;
+        }
+
+        public DataTable MostrarDetalle(int idcompra)
+        {
+            DataTable resul = new DataTable("detallecompra");
+            SqlConnection conexion = new SqlConnection();
+            try
+            {
+                conexion.ConnectionString = Conexión.Conn;
+                SqlCommand Cmd = new SqlCommand("spmostrar_detalle_compra", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@idcompra", idcompra);
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(resul);
+            }
+            catch (Exception ex)
+            {
+                resul = null;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open) conexion.Close();
+            }
+            return resul;
+        }
+        public DataTable ImprimirCompra(int idcompra)
+        {
+            DataTable dt = new DataTable("compra");
+            SqlConnection conexion = new SqlConnection(Conexión.Conn);
+            try
+            {
+                SqlCommand Cmd = new SqlCommand("sp_imprimir_compra", conexion);
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@idcompra", idcompra);
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(dt);
+            }
+            catch (Exception ex) { dt = null; }
+            return dt;
+        }
     }
 }

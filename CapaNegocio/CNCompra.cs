@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -25,6 +26,27 @@ namespace CapaNegocio
             Datos.Estado = "Recibida";
 
             return Datos.Guardar(Datos, detalles);
+        }
+        public static DataTable BuscarFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            CDCompra Datos = new CDCompra();
+            return Datos.BuscarFechas(fechaInicio, fechaFin);
+        }
+        public static string Anular(int idcompra)
+        {
+            CDCompra Datos = new CDCompra();
+            return Datos.Anular(idcompra);
+        }
+
+        public static DataTable MostrarDetalle(int idcompra)
+        {
+            CDCompra Datos = new CDCompra();
+            return Datos.MostrarDetalle(idcompra);
+        }
+        public static DataTable ImprimirCompra(int idcompra)
+        {
+            CDCompra Datos = new CDCompra();
+            return Datos.ImprimirCompra(idcompra);
         }
     }
 }

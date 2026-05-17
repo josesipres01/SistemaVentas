@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FrmReporteConsultaVentas
+    partial class FrmReporteConsultaCompras
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,23 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.RptConsultaVentas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.RptConsultaCompras.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(-2, 1);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1275, 752);
+            this.reportViewer1.Size = new System.Drawing.Size(1275, 762);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load_2);
             // 
-            // FrmReporteConsultaVentas
+            // FrmReporteConsultaCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 752);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmReporteConsultaVentas";
-            this.Load += new System.EventHandler(this.FrmReporteConsultaVentas_Load);
+            this.Name = "FrmReporteConsultaCompras";
+            this.Load += new System.EventHandler(this.FrmReporteConsultaCompras_Load);
             this.ResumeLayout(false);
 
         }
